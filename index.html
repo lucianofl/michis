@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Tipografía -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- SEO básico -->
+<meta name="description" content="La casa de sole y sus animalitos"
+<meta property="og:title" content="Mis Gatos y perros "
+<meta property="og:description" content="Conoce a todos mis animalitos en esta pagina"
+<meta property="og:type" content="website">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mis Gatos y Perros</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<!-- Modal de collage -->   
+<div id="collageModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" id="collageBackdrop"></div>
+    <div class="modal__content" role="document">
+      <button class="modal__close btn-sec" id="collageClose" aria-label="Cerrar">✕</button>
+      <div class="collage-grid" id="collageGrid"></div>
+    </div>
+  </div>  
+<body>
+    <nav class="nav">
+        <div class="nav__inner">
+          <a href="#top" class="brand">🐾 Mis Gatos y Perros</a>
+          <ul class="nav__links">
+            <li><a href="#gatos">Gatos</a></li>
+            <li><a href="#perros">Perros</a></li>
+          </ul>
+      
+          <!-- Toggle de tema con SVGs -->
+          <button id="themeToggle" class="btn-sec nav__toggle" aria-label="Cambiar tema">
+            <!-- Sol -->
+            <svg class="icon sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+            </svg>
+            <!-- Luna -->
+            <svg class="icon moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+    </nav>
+      
+  <!-- Hero -->
+  <header class="hero" data-parallax-speed="0.3">
+    <div class="hero__inner">
+      <h1>Mis Gatos y Perros</h1>
+      <p>Una página simple para presentar a mis compañeros felinos y caninos.</p>
+      <a href="#galeria" class="btn">Conocerlos</a>
+    </div>
+  </header>
+
+  <main id="galeria" class="container">
+    <!-- ===== Grupo GATOS ===== -->
+    <section id="gatos" class="grupo reveal" data-section>
+      <h2 class="grupo-title">Gatos</h2>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Ivar (3 patas)</h3>
+          <p>Un guerrero. Perdió una patita pero corre, juega y trepa como si nada.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.15">
+            <img src="assets/ivar.jpg" alt="Ivar, gato con tres patas" loading="lazy"/>
+            <figcaption>Ivar, corazón valiente.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.12">
+            <img src="assets/avocato.jpg" alt="Avocato, gato" loading="lazy"/>
+            <figcaption>Avocato, fan de las siestas.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Avocato</h3>
+          <p>Tranquilo y meloso. Defensor oficial del sillón.</p>
+        </div>
+      </section>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>La Bebe</h3>
+          <p>La más mimada. Persigue rayitos de sol por toda la casa.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.1">
+            <img src="assets/labebe.jpg" alt="La Bebe, gata" loading="lazy"/>
+            <figcaption>La Bebe, reina mini.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.1">
+            <img src="assets/jupiter.jpg" alt="Júpiter, gato" loading="lazy"/>
+            <figcaption>Júpiter, mirada espacial.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Júpiter</h3>
+          <p>Curioso y atento. Inspector de cajas y bolsas.</p>
+        </div>
+      </section>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Gaspar</h3>
+          <p>Serio por fuera, dulce por dentro. Amigo de los snacks.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.08">
+            <img src="assets/gaspar.jpg" alt="Gaspar, gato" loading="lazy"/>
+            <figcaption>Gaspar, estilo clásico.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.08">
+            <img src="assets/catalina.jpg" alt="Catalina, gata" loading="lazy"/>
+            <figcaption>Catalina, elegancia pura.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Catalina</h3>
+          <p>Se adueña de cualquier manta nueva. Ronroneo premium.</p>
+        </div>
+      </section>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Pelusa</h3>
+          <p>Redonda y suave. Si desaparecen los elásticos del pelo… ya sabés quién fue.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.06">
+            <img src="assets/pelusa.jpg" alt="Pelusa, gata" loading="lazy"/>
+            <figcaption>Pelusa, nube con patas.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.06">
+            <img src="assets/luis.jpg" alt="Luis, gato" loading="lazy"/>
+            <figcaption>Luis, siempre elegante.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Luis</h3>
+          <p>Caballero felino. Vigila la casa desde la biblioteca.</p>
+        </div>
+      </section>
+    </section>
+  
+    <!-- ===== Grupo PERROS ===== -->
+    <section id="perros" class="grupo reveal" data-section>
+      <h2 class="grupo-title">Perros</h2>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Tincho</h3>
+          <p>Guardia del patio. Ladrido fuerte, corazón enorme.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.12">
+            <img src="assets/tincho.jpg" alt="Tincho, perro" loading="lazy"/>
+            <figcaption>Tincho, custodio oficial.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.12">
+            <img src="assets/pipo.jpg" alt="Pipo, perro" loading="lazy"/>
+            <figcaption>Pipo, experto en pelotas.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Pipo</h3>
+          <p>Pura energía. Nunca dice no a un paseo.</p>
+        </div>
+      </section>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Connie</h3>
+          <p>Dulce y compañera. Sabe exactamente cuándo necesitás un mimo.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.1">
+            <img src="assets/connie.jpg" alt="Connie, perra" loading="lazy"/>
+            <figcaption>Connie, abrazo seguro.</figcaption>
+          </figure>
+        </div>
+      </section>
+  
+      <section class="bloque bloque--invert">
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.1">
+            <img src="assets/kivi.jpg" alt="Kivi, perro" loading="lazy"/>
+            <figcaption>Kivi, velocista del parque.</figcaption>
+          </figure>
+        </div>
+        <div class="col texto">
+          <h3>Kivi</h3>
+          <p>Le encanta correr y traer la correa para salir.</p>
+        </div>
+      </section>
+  
+      <section class="bloque">
+        <div class="col texto">
+          <h3>Negro</h3>
+          <p>Se hace el serio, pero es un mimoso. Fan de dormir a tus pies.</p>
+        </div>
+        <div class="col imagen">
+          <figure class="card tilt" data-parallax-speed="0.08">
+            <img src="assets/negro.jpg" alt="Negro, perro" loading="lazy"/>
+            <figcaption>Negro, sombra fiel.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </section>
+  </main>
+  
+
+  <footer class="footer">
+    <small>© <span id="anio"></span> Lucho — Hecho con ♥</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
