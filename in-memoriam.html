@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>In Memoriam - Mis Gatos y Perros</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand">🐾 Mis Gatos y Perros</a>
+      <ul class="nav__links">
+        <li><a href="index.html#gatos">Gatos</a></li>
+        <li><a href="index.html#perros">Perros</a></li>
+        <li><a href="in-memoriam.html" class="active">In Memoriam</a></li>
+      </ul>
+      <!-- Toggle de tema con SVGs -->
+      <button id="themeToggle" class="btn-sec nav__toggle" aria-label="Cambiar tema">
+        <!-- Sol -->
+        <svg class="icon sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <!-- Luna -->
+        <svg class="icon moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+  </nav>
+  <section id="in-memoriam">
+    <h2>In Memoriam</h2>
+    <div class="in-memoriam-container">
+      <div class="memorial-card">
+        <img src="imagenes/michi1.jpg" alt="Nombre del animal">
+        <h3>Nombre del animal</h3>
+        <p>Descripción breve y especial recordando su vida.</p>
+      </div>
+
+      <div class="memorial-card">
+        <img src="imagenes/perro1.jpg" alt="Nombre del animal">
+        <h3>Nombre del animal</h3>
+        <p>Otra descripción emotiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="anio"></span> Lucho — Hecho con ♥</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

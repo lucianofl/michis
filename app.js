@@ -81,13 +81,18 @@ function setActiveLinkById(id){
   navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
 }
 
-// click en links: scroll compensado + activo inmediato + URL limpia
+// click en links: solo interceptar anclas internas (#)
 navLinks.forEach(a => {
   a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href') || '';
+    if (!href.startsWith('#')) {
+      // es otra página: dejar que el navegador navegue normal
+      return;
+    }
     e.preventDefault();
-    const targetId = a.getAttribute('href').slice(1);
+    const targetId = href.slice(1);
     const el = document.getElementById(targetId);
-    if(!el) return;
+    if (!el) return;
 
     const y = el.getBoundingClientRect().top + window.pageYOffset - (navH + 8);
     window.scrollTo({ top: y, behavior: 'smooth' });
@@ -95,6 +100,7 @@ navLinks.forEach(a => {
     history.pushState(null, '', `#${targetId}`);
   });
 });
+
 
 // activo por scroll usando el área visible más grande
 const groups = document.querySelectorAll('section[data-section]');
