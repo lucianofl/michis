@@ -55,7 +55,27 @@
       <p>Una página simple para presentar a mis compañeros felinos y caninos.</p>
       <a href="#galeria" class="btn">Conocerlos</a>
     </div>
+    <!-- Patrón de patitas (debajo del texto del hero) -->
+<svg class="hero-paws" viewBox="0 0 100 100" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+  <defs>
+    <!-- Patita: almohadilla + 4 deditos -->
+    <g id="paw">
+      <ellipse cx="50" cy="62" rx="11" ry="8"></ellipse>
+      <circle cx="40" cy="52" r="3.2"></circle>
+      <circle cx="60" cy="52" r="3.2"></circle>
+      <circle cx="45" cy="48" r="3.2"></circle>
+      <circle cx="55" cy="48" r="3.2"></circle>
+    </g>
+  </defs>
+
+  <!-- Varias patitas distribuidas -->
+  <g class="paws">
+    <use href="#paw" xlink:href="#paw" transform="translate(8,10) scale(0.7) rotate(-12)"/>
+  </g>
+ </svg>
+
   </header>
+  
 
   <main id="galeria" class="container">
     <!-- ===== Grupo GATOS ===== -->
@@ -64,8 +84,8 @@
   
       <section class="bloque">
         <div class="col texto">
-          <h3>Ivar (3 patas)</h3>
-          <p>Un guerrero. Perdió una patita pero corre, juega y trepa como si nada.</p>
+          <h3>Ivar el Tripode</h3>
+          <p>Un guerrero. Lo encontramos en la calle tirado con su patita en mal estado, sobrevivio a la cirugia y hoy es un gato feliz y saludable con mucha energia y ganas de jugar.</p>
         </div>
         <div class="col imagen">
           <figure class="card tilt" data-parallax-speed="0.15">

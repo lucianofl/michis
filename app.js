@@ -11,20 +11,34 @@ reveals.forEach(r => obs.observe(r));
 /* Parallax MUY suave (scroll) usando data-parallax-speed */
 const parallaxEls = document.querySelectorAll('[data-parallax-speed]');
 let ticking = false;
-function onScroll(){
-  if(!ticking){
-    window.requestAnimationFrame(() => {
-      const y = window.scrollY || window.pageYOffset;
-      parallaxEls.forEach(el => {
-        const speed = parseFloat(el.dataset.parallaxSpeed || '0.15');
-        el.style.transform = `translate3d(0, ${y * speed * -0.2}px, 0)`;
-      });
-      ticking = false;
+
+function updateParallax(){
+  if (ticking) return;
+  ticking = true;
+
+  requestAnimationFrame(() => {
+    const y = window.scrollY || window.pageYOffset || 0;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const small  = window.innerWidth <= 600; // mismo criterio que tu CSS
+
+    parallaxEls.forEach(el => {
+      if (reduce || small) { 
+        el.style.transform = ''; // desactiva en mobile / reduced motion
+        return;
+      }
+      const speed = parseFloat(el.dataset.parallaxSpeed || '0.15');
+      el.style.transform = `translate3d(0, ${(-y * speed * 0.2).toFixed(2)}px, 0)`;
     });
-    ticking = true;
-  }
+
+    ticking = false;
+  });
 }
-window.addEventListener('scroll', onScroll, { passive: true });
+
+window.addEventListener('scroll', updateParallax, { passive: true });
+window.addEventListener('resize', updateParallax);
+window.addEventListener('load', updateParallax);
+document.addEventListener('DOMContentLoaded', updateParallax);
+
 
 /* Tilt sutil con el mouse (opcional) */
 document.querySelectorAll('.tilt').forEach(card => {
@@ -103,6 +117,7 @@ const collageModal  = document.getElementById('collageModal');
 const collageGrid   = document.getElementById('collageGrid');
 const collageClose  = document.getElementById('collageClose');
 const collageBack   = document.getElementById('collageBackdrop');
+
 
 /* Placeholder por si faltan imágenes */
 const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
